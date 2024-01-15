@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartAPI\\DepartAPI.csproj": {}
+    "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartAPI\\DepartAPI.csproj": {
+    "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartAPI\\DepartAPI.csproj",
-        "projectName": "DepartAPI",
-        "projectPath": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartAPI\\DepartAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj",
+        "projectName": "DepartApi",
+        "projectPath": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj",
         "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartAPI\\obj\\",
+        "outputPath": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pichau\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,13 +50,13 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.1, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
               "target": "Package",
-              "version": "[1.1.6, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -67,10 +67,6 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
-            },
-            "System.Diagnostics.PerformanceCounter": {
-              "target": "Package",
-              "version": "[7.0.0, )"
             }
           },
           "imports": [

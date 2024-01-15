@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\DepartAPI.props" />
+  <Import Project="..\build\DepartApi.props" />
 </Project>

@@ -1,6 +1,6 @@
-@DepartAPI_HostAddress = http://localhost:5116
+@DepartApi_HostAddress = http://localhost:5114
 
-GET {{DepartAPI_HostAddress}}/weatherforecast/
+GET {{DepartApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
