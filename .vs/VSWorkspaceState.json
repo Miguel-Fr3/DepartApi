@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\DepartApi",
+    "\\DepartApi\\Controllers",
+    "\\DepartApi\\Data",
+    "\\DepartApi\\Migrations",
+    "\\DepartApi\\Models"
+  ],
+  "SelectedNode": "\\DepartApi\\Controllers\\DepartamentoController.cs",
+  "PreviewInSolutionExplorer": false
+}

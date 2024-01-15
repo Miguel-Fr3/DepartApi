@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj": {}
+    "C:\\Users\\Pichau\\Desktop\\DepartApi-1\\DepartApi\\DepartApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj": {
+    "C:\\Users\\Pichau\\Desktop\\DepartApi-1\\DepartApi\\DepartApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj",
+        "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\DepartApi-1\\DepartApi\\DepartApi.csproj",
         "projectName": "DepartApi",
-        "projectPath": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\DepartApi.csproj",
+        "projectPath": "C:\\Users\\Pichau\\Desktop\\DepartApi-1\\DepartApi\\DepartApi.csproj",
         "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pichau\\Desktop\\DepartAPI\\DepartApi\\obj\\",
+        "outputPath": "C:\\Users\\Pichau\\Desktop\\DepartApi-1\\DepartApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pichau\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.1, )"
