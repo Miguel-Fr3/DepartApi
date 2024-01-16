@@ -49,6 +49,20 @@ namespace DepartApi.Controllers
 
 
         }
+        [HttpGet("{DepartamentoId}/funcionarios")]
+        public async Task<IActionResult> GetFuncionariosByDepartamentoId(int DepartamentoId)
+        {
+            try
+            {
+                var funcionarios = await _repo.GetFuncionariosByDepartamentoIdAsync(DepartamentoId);
+
+                return Ok(funcionarios);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+        }
 
 
         [HttpPost]
@@ -77,15 +91,18 @@ namespace DepartApi.Controllers
             try
             {
                 var departamento = await _repo.GetDepartamentoAsyncById(departamentoId, false);
-                if(departamento == null) return NotFound();
+                if (departamento == null) return NotFound();
 
 
-                _repo.Update(model);
+                departamento.Nome = model.Nome;
+                departamento.Sigla = model.Sigla;
+
+
+                _repo.Update(departamento);
 
                 if (await _repo.SaveChangesAsync())
                 {
-
-                    return Ok(model);
+                    return Ok(departamento);
                 }
             }
             catch (Exception ex)
@@ -95,6 +112,9 @@ namespace DepartApi.Controllers
 
             return BadRequest();
         }
+
+
+
         [HttpDelete("{departamentoId}")]
         public async Task<IActionResult> Delete(int departamentoId)
         {
@@ -109,7 +129,7 @@ namespace DepartApi.Controllers
                 if (await _repo.SaveChangesAsync())
                 {
 
-                    return Ok("Sucesso");
+                    return Ok(new { message = "Sucesso" });
                 }
             }
             catch (Exception ex)

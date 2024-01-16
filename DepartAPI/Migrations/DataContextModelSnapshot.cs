@@ -139,13 +139,11 @@ namespace DepartApi.Migrations
 
             modelBuilder.Entity("DepartApi.Models.Funcionario", b =>
                 {
-                    b.HasOne("DepartApi.Models.Departamento", "Departamento")
+                    b.HasOne("DepartApi.Models.Departamento", null)
                         .WithMany("Funcionarios")
                         .HasForeignKey("DepartamentoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Departamento");
                 });
 
             modelBuilder.Entity("DepartApi.Models.Departamento", b =>

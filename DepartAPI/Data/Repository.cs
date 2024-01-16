@@ -62,15 +62,9 @@ namespace DepartApi.Data
 
             return await query.FirstOrDefaultAsync();
         }
-
         public async Task<Funcionario[]> GetAllFuncionariosAsync(bool includeDepartamento = false)
         {
             IQueryable<Funcionario> query = _context.Funcionarios;
-
-            if (includeDepartamento)
-            {
-                query = query.Include(f => f.Departamento);
-            }
 
             query = query.AsNoTracking()
                          .OrderBy(f => f.Id);
@@ -82,11 +76,6 @@ namespace DepartApi.Data
         {
             IQueryable<Funcionario> query = _context.Funcionarios;
 
-            if (includeDepartamento)
-            {
-                query = query.Include(f => f.Departamento);
-            }
-
             query = query.AsNoTracking()
                          .OrderBy(f => f.Id)
                          .Where(f => f.Id == funcionarioId);
@@ -94,6 +83,15 @@ namespace DepartApi.Data
             return await query.FirstOrDefaultAsync();
         }
 
+        public async Task<Funcionario[]> GetFuncionariosByDepartamentoIdAsync(int departamentoId)
+        {
+            IQueryable<Funcionario> query = _context.Funcionarios;
 
+            query = query.AsNoTracking()
+                         .OrderBy(f => f.Id)
+                         .Where(f => f.DepartamentoId == departamentoId);
+
+            return await query.ToArrayAsync();
+        }
     }
 }

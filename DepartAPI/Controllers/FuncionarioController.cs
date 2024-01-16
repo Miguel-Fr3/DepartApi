@@ -1,6 +1,8 @@
 ﻿using DepartApi.Data;
 using DepartApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace DepartApi.Controllers
 {
@@ -14,21 +16,19 @@ namespace DepartApi.Controllers
         {
             _repo = repo;
         }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
                 var result = await _repo.GetAllFuncionariosAsync(true);
-
                 return Ok(result);
             }
             catch (Exception ex)
             {
                 return BadRequest($"Erro: {ex.Message}");
             }
-
-
         }
 
         [HttpGet("{FuncionarioId}")]
@@ -37,17 +37,13 @@ namespace DepartApi.Controllers
             try
             {
                 var result = await _repo.GetFuncionarioAsyncById(FuncionarioId, true);
-
                 return Ok(result);
             }
             catch (Exception ex)
             {
                 return BadRequest($"Erro: {ex.Message}");
             }
-
-
         }
-
 
         [HttpPost]
         public async Task<IActionResult> Post(Funcionario model)
@@ -69,21 +65,31 @@ namespace DepartApi.Controllers
 
             return BadRequest();
         }
-        [HttpPut("{FuncionarioId}")]
-        public async Task<IActionResult> Put(int FuncionarioId, Funcionario model)
+
+
+
+        [HttpPut("{funcionarioId}")]
+        public async Task<IActionResult> Put(int funcionarioId, Funcionario model)
         {
             try
             {
-                var funcionario = await _repo.GetFuncionarioAsyncById(FuncionarioId, false);
-                if (funcionario == null) return NotFound();
+                var funcionario = await _repo.GetFuncionarioAsyncById(funcionarioId, true);
+
+                if (funcionario == null)
+                    return NotFound();
 
 
-                _repo.Update(model);
+                funcionario.Nome = model.Nome;
+                funcionario.Foto = model.Foto;
+                funcionario.RG = model.RG;
+                funcionario.DepartamentoId = model.DepartamentoId;
+
+                _repo.Update(funcionario);
+
 
                 if (await _repo.SaveChangesAsync())
                 {
-
-                    return Ok(model);
+                    return Ok(funcionario);
                 }
             }
             catch (Exception ex)
@@ -93,21 +99,23 @@ namespace DepartApi.Controllers
 
             return BadRequest();
         }
-        [HttpDelete("{FuncionarioId}")]
-        public async Task<IActionResult> Delete(int FuncionarioId)
+
+
+
+
+        [HttpDelete("{funcionarioId}")]
+        public async Task<IActionResult> Delete(int funcionarioId)
         {
             try
             {
-                var funcionario = await _repo.GetFuncionarioAsyncById(FuncionarioId, false);
+                var funcionario = await _repo.GetFuncionarioAsyncById(funcionarioId, false);
                 if (funcionario == null) return NotFound();
-
 
                 _repo.Delete(funcionario);
 
                 if (await _repo.SaveChangesAsync())
                 {
-
-                    return Ok("Sucesso");
+                    return Ok(new { message = "Sucesso" });
                 }
             }
             catch (Exception ex)
@@ -119,4 +127,3 @@ namespace DepartApi.Controllers
         }
     }
 }
-
