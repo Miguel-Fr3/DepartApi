@@ -7,6 +7,6 @@
     "\\DepartApi\\Migrations",
     "\\DepartApi\\Models"
   ],
-  "SelectedNode": "\\DepartApi\\Controllers\\FuncionarioController.cs",
+  "SelectedNode": "\\DepartApi\\Controllers\\DepartamentoController.cs",
   "PreviewInSolutionExplorer": false
 }
