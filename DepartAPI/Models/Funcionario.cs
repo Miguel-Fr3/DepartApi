@@ -1,11 +1,11 @@
 ﻿namespace DepartApi.Models
 {
-    public class Funcionario
+    public class Funcionarios
     {
-        public Funcionario() { }
+        public Funcionarios() { }
 
 
-        public Funcionario(int Id, string Nome, string Foto, string RG, int DepartamentoId)
+        public Funcionarios(int Id, string Nome, string Foto, string RG, int DepartamentoId)
         {
             this.Id = Id;
             this.Nome = Nome;

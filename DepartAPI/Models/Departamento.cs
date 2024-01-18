@@ -1,12 +1,12 @@
 ﻿namespace DepartApi.Models
 {
-    public class Departamento
+    public class Departamentos
     {
 
-        public Departamento() { }
+        public Departamentos() { }
 
 
-        public Departamento(int Id, string Nome, string Sigla)
+        public Departamentos(int Id, string Nome, string Sigla)
         {
             this.Id = Id;   
             this.Nome = Nome;
@@ -16,6 +16,6 @@
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Sigla { get; set; }
-        public List<Funcionario> Funcionarios { get; set; } = new List<Funcionario>();
+        public List<Funcionarios> Funcionarios { get; set; } = new List<Funcionarios>();
     }
 }

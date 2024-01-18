@@ -7,11 +7,11 @@ namespace DepartApi.Controllers
     [ApiController]
     [Route("api/[controller]")]
 
-    public class DepartamentoController : Controller
+    public class DepartamentosController : Controller
     {
         private readonly IRepository _repo;
 
-        public DepartamentoController(IRepository repo)
+        public DepartamentosController(IRepository repo)
         {
             _repo = repo;
         }
@@ -49,7 +49,7 @@ namespace DepartApi.Controllers
 
 
         }
-        [HttpGet("{DepartamentoId}/funcionarios")]
+        [HttpGet("{DepartamentoId}/Funcionarios")]
         public async Task<IActionResult> GetFuncionariosByDepartamentoId(int DepartamentoId)
         {
             try
@@ -66,7 +66,7 @@ namespace DepartApi.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Post(Departamento model)
+        public async Task<IActionResult> Post(Departamentos model)
         {
             try
             {
@@ -85,8 +85,8 @@ namespace DepartApi.Controllers
 
             return BadRequest();
         }
-        [HttpPut("{departamentoId}")]
-        public async Task<IActionResult> Put(int departamentoId, Departamento model)
+        [HttpPut("{DepartamentoId}")]
+        public async Task<IActionResult> Put(int departamentoId, Departamentos model)
         {
             try
             {
@@ -115,7 +115,7 @@ namespace DepartApi.Controllers
 
 
 
-        [HttpDelete("{departamentoId}")]
+        [HttpDelete("{DepartamentoId}")]
         public async Task<IActionResult> Delete(int departamentoId)
         {
             try

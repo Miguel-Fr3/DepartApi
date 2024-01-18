@@ -10,12 +10,12 @@ namespace DepartApi.Data
         void Delete<T>(T entity) where T : class;
         Task<bool> SaveChangesAsync();
 
-        Task<Departamento[]> GetAllDepartamentosAsync(bool includeFuncionarios);
-        Task<Departamento> GetDepartamentoAsyncById(int departamentoId, bool includeFuncionarios);
+        Task<Departamentos[]> GetAllDepartamentosAsync(bool includeFuncionarios);
+        Task<Departamentos> GetDepartamentoAsyncById(int departamentoId, bool includeFuncionarios);
 
-        Task<Funcionario[]> GetAllFuncionariosAsync(bool includeDepartamento);
-        Task<Funcionario> GetFuncionarioAsyncById(int funcionarioId, bool includeDepartamento);
+        Task<Funcionarios[]> GetAllFuncionariosAsync(bool includeDepartamento);
+        Task<Funcionarios> GetFuncionarioAsyncById(int funcionarioId, bool includeDepartamento);
 
-        Task<Funcionario[]> GetFuncionariosByDepartamentoIdAsync(int departamentoId);
+        Task<Funcionarios[]> GetFuncionariosByDepartamentoIdAsync(int departamentoId);
     }
 }

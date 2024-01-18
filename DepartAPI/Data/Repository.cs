@@ -32,9 +32,9 @@ namespace DepartApi.Data
         {
             return (await _context.SaveChangesAsync()) > 0;
         }
-        public async Task<Departamento[]> GetAllDepartamentosAsync(bool includeFuncionarios = false)
+        public async Task<Departamentos[]> GetAllDepartamentosAsync(bool includeFuncionarios = false)
         {
-            IQueryable<Departamento> query = _context.Departamentos;
+            IQueryable<Departamentos> query = _context.Departamentos;
 
             if (includeFuncionarios)
             {
@@ -47,9 +47,9 @@ namespace DepartApi.Data
             return await query.ToArrayAsync();
         }
 
-        public async Task<Departamento> GetDepartamentoAsyncById(int departamentoId, bool includeFuncionarios = false)
+        public async Task<Departamentos> GetDepartamentoAsyncById(int departamentoId, bool includeFuncionarios = false)
         {
-            IQueryable<Departamento> query = _context.Departamentos;
+            IQueryable<Departamentos> query = _context.Departamentos;
 
             if (includeFuncionarios)
             {
@@ -62,9 +62,9 @@ namespace DepartApi.Data
 
             return await query.FirstOrDefaultAsync();
         }
-        public async Task<Funcionario[]> GetAllFuncionariosAsync(bool includeDepartamento = false)
+        public async Task<Funcionarios[]> GetAllFuncionariosAsync(bool includeDepartamento = false)
         {
-            IQueryable<Funcionario> query = _context.Funcionarios;
+            IQueryable<Funcionarios> query = _context.Funcionarios;
 
             query = query.AsNoTracking()
                          .OrderBy(f => f.Id);
@@ -72,9 +72,9 @@ namespace DepartApi.Data
             return await query.ToArrayAsync();
         }
 
-        public async Task<Funcionario> GetFuncionarioAsyncById(int funcionarioId, bool includeDepartamento = false)
+        public async Task<Funcionarios> GetFuncionarioAsyncById(int funcionarioId, bool includeDepartamento = false)
         {
-            IQueryable<Funcionario> query = _context.Funcionarios;
+            IQueryable<Funcionarios> query = _context.Funcionarios;
 
             query = query.AsNoTracking()
                          .OrderBy(f => f.Id)
@@ -83,9 +83,9 @@ namespace DepartApi.Data
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<Funcionario[]> GetFuncionariosByDepartamentoIdAsync(int departamentoId)
+        public async Task<Funcionarios[]> GetFuncionariosByDepartamentoIdAsync(int departamentoId)
         {
-            IQueryable<Funcionario> query = _context.Funcionarios;
+            IQueryable<Funcionarios> query = _context.Funcionarios;
 
             query = query.AsNoTracking()
                          .OrderBy(f => f.Id)
